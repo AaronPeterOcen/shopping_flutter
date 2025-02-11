@@ -1,29 +1,41 @@
+import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 
 class MainHomeScreen extends StatefulWidget {
   const MainHomeScreen({super.key});
 
   @override
-  State<MainHomeScreen> createState() => _MainHomeScreenState();
+  _MainHomeScreenState createState() => _MainHomeScreenState();
 }
 
 class _MainHomeScreenState extends State<MainHomeScreen> {
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.call),
-            label: 'Calls',
+      bottomNavigationBar: FlashyTabBar(
+        selectedIndex: _selectedIndex,
+        showElevation: true,
+        onItemSelected: (index) => setState(() {
+          _selectedIndex = index;
+        }),
+        items: [
+          FlashyTabBarItem(
+            icon: Icon(Icons.event),
+            title: Text('Events'),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.camera),
-            label: 'Camera',
+          FlashyTabBarItem(
+            icon: Icon(Icons.search),
+            title: Text('Search'),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chats',
+          FlashyTabBarItem(
+            icon: Icon(Icons.highlight),
+            title: Text('Highlights'),
+          ),
+          FlashyTabBarItem(
+            icon: Icon(Icons.settings),
+            title: Text('Settings'),
           ),
         ],
       ),
