@@ -3,6 +3,8 @@ import 'package:shopping_flutter/api_services.dart';
 import '../product.dart';
 
 class ProductListScreen extends StatefulWidget {
+  const ProductListScreen({super.key});
+
   @override
   _ProductListScreenState createState() => _ProductListScreenState();
 }
