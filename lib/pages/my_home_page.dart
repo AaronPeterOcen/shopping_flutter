@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  List<Product> _products = [
+  late List<Product> _products = [
     Product('Product 1', 10.99),
     Product('Product 2', 5.99),
     Product('Product 3', 7.99),
@@ -23,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ecommerce App'),
+        title: Text('Shoebay App'),
       ),
       body: Column(
         children: <Widget>[
@@ -45,6 +47,24 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: 'Search',
+                border: OutlineInputBorder(),
+              ),
+              onChanged: (text) {
+                setState(() {
+                  _products = _products
+                      .where((product) => product.name
+                          .toLowerCase()
+                          .contains(text.toLowerCase()))
+                      .toList();
+                });
+              },
+            ),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
