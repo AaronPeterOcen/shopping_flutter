@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_flutter/pages/home_page.dart';
 // import 'package:shopping_flutter/pages/my_home_page.dart';
 import 'package:shopping_flutter/pages/product_list_screen.dart';
@@ -12,11 +13,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shoppy App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        textTheme: GoogleFonts.ubuntuTextTheme(textTheme).copyWith(
+          bodyMedium: GoogleFonts.aBeeZee(textStyle: textTheme.bodyMedium),
+        ),
       ),
       home: HomePage(),
     );
