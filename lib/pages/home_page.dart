@@ -1,37 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_flutter/pages/cart_page.dart';
 import 'package:shopping_flutter/pages/product_list_screen.dart';
+import 'package:shopping_flutter/pages/cart_page.dart';
 import 'package:shopping_flutter/pages/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  String _searchQuery = '';
 
-  // List of pages for navigation
   final List<Widget> _pages = [
-    ProductListScreen(), // Your main product list
-    CartPage(), // Placeholder for Cart Page
-    ProfilePage(), // Placeholder for Profile Page
+    ProductListScreen(),
+    CartPage(),
+    ProfilePage(),
   ];
+
+  void _onSearch(String query) {
+    setState(() {
+      _searchQuery = query;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: const Text(
-            'Shoppy App',
-            style: TextStyle(fontWeight: FontWeight.bold),
+        title: const Text('Shoppy App'),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(56),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              onChanged: _onSearch,
+              decoration: InputDecoration(
+                hintText: 'Search for items...',
+                prefixIcon: const Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide.none,
+                ),
+                filled: true,
+                fillColor: Colors.white,
+              ),
+            ),
           ),
         ),
       ),
-      body: _pages[_selectedIndex], // Display the selected page
+      body: _pages[_selectedIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
         onDestinationSelected: (index) {
