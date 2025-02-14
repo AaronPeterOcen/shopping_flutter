@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shopping_flutter/api_services.dart';
 import '../product.dart';
+import '../providers/cart_provider.dart';
 
 class ProductListScreen extends StatefulWidget {
   const ProductListScreen({super.key});
@@ -35,6 +37,9 @@ class _ProductListScreenState extends State<ProductListScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final cartProvider =
+        Provider.of<CartProvider>(context); // Access CartProvider
+
     return Scaffold(
       appBar: AppBar(title: Text("Store Items")),
       body: Column(
@@ -113,6 +118,18 @@ class _ProductListScreenState extends State<ProductListScreen> {
                               width: 50, height: 50),
                           title: Text(product.title),
                           subtitle: Text("\$${product.price}"),
+                          trailing: IconButton(
+                            icon: Icon(Icons.add_shopping_cart),
+                            onPressed: () {
+                              cartProvider.addToCart(product); // Add to cart
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content:
+                                      Text("${product.title} added to cart"),
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       );
                     },

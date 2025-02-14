@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart'; // Add this import
 import 'package:shopping_flutter/pages/product_list_screen.dart';
-import 'package:shopping_flutter/pages/cart_page.dart'; // Create this if you haven't
-import 'package:shopping_flutter/pages/profile_page.dart'; // Create this if you haven't
+import 'package:shopping_flutter/pages/cart_page.dart';
+import 'package:shopping_flutter/pages/profile_page.dart';
+import 'package:shopping_flutter/providers/cart_provider.dart'; // Assuming you have this
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,7 +26,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shoppy App'),
+        title: Center(
+          child: const Text(
+            'Shoppy App',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
       body: _pages[_selectedIndex], // Display the selected page
       bottomNavigationBar: NavigationBar(

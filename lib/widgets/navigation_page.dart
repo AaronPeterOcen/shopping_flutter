@@ -14,7 +14,7 @@ class _NavigationPageState extends State<NavigationPage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    HomePage(), // Your Home Page
+    HomePage(), // Home Page
     ProductListScreen(), // Product List Page
     Center(child: Text("Cart")), // Placeholder for Cart Page
     Center(child: Text("Profile")), // Placeholder for Profile Page
