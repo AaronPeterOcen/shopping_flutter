@@ -3,7 +3,7 @@ import 'package:shopping_flutter/cart_item.dart';
 import 'package:shopping_flutter/product.dart';
 
 class CartProvider with ChangeNotifier {
-  List<CartItem> _cartItems = [];
+  final List<CartItem> _cartItems = [];
 
   List<CartItem> get cartItems => _cartItems;
 
@@ -23,7 +23,7 @@ class CartProvider with ChangeNotifier {
   }
 
   void removeFromCart(String productId) {
-    print('Removing product with ID: $productId'); // Debug log
+    print('Removing product with ID: $productId');
     _cartItems.removeWhere((item) => item.product.id.toString() == productId);
     notifyListeners();
   }

@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:shopping_flutter/pages/home_page.dart';
 import 'package:shopping_flutter/pages/product_list_screen.dart';
 
+// ignore: use_key_in_widget_constructors
 class NavigationPage extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _NavigationPageState createState() => _NavigationPageState();
 }
 

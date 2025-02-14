@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart'; // Add this import
 import 'package:shopping_flutter/pages/product_list_screen.dart';
 import 'package:shopping_flutter/pages/cart_page.dart';
 import 'package:shopping_flutter/pages/profile_page.dart';
-import 'package:shopping_flutter/providers/cart_provider.dart'; // Assuming you have this
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomePageState createState() => _HomePageState();
 }
 
@@ -36,7 +35,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: _pages[_selectedIndex], // Display the selected page
+      body: _pages[_selectedIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
         onDestinationSelected: (index) {
