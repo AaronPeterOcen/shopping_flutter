@@ -71,7 +71,9 @@ class ProfilePage extends StatelessWidget {
               leading: const Icon(Icons.person),
               title: const Text("User Profile"),
               trailing: const Icon(Icons.arrow_forward_ios),
-              onTap: () {},
+              onTap: () {
+                // Navigate to User Profile Page
+              },
             ),
 
             // Push Notifications
@@ -81,8 +83,10 @@ class ProfilePage extends StatelessWidget {
               subtitle: const Text(
                   "Get updates on your sales, purchases, and key activities."),
               trailing: Switch(
-                value: true,
-                onChanged: (value) {},
+                value: false,
+                onChanged: (value) {
+                  // Update the state
+                },
               ),
             ),
 
@@ -91,7 +95,9 @@ class ProfilePage extends StatelessWidget {
               leading: const Icon(Icons.payment),
               title: const Text("Payment methods"),
               trailing: const Icon(Icons.arrow_forward_ios),
-              onTap: () {},
+              onTap: () {
+                // Navigate to Payment Methods Page
+              },
             ),
 
             // Delivery Address
