@@ -1,17 +1,33 @@
-# shopping_flutter
+# Shopping App with Flutter
 
-A new Flutter project.
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-%230175C2.svg?style=for-the-badge&logo=Dart&logoColor=white)
+
+A simple and elegant shopping app built with Flutter. This app demonstrates the use of Flutter's powerful UI toolkit to create a seamless shopping experience. The app includes features like product browsing, adding items to a cart, and a smooth checkout process.
+
+## Features
+
+- **Product Catalog**: Browse through a list of products with details such as name, price, and image.
+- **Shopping Cart**: Add and remove products from the cart.
+- **Responsive UI**: A clean and responsive user interface that works on both mobile and tablet devices.
+- **State Management**: Efficient state management using Provider or Riverpod (depending on the implementation).
+- **Dark Mode Support**: Optional dark theme for better user experience in low-light conditions.
+
+## Screenshots
+
+![Home Screen](screenshots/home.png)
+![Cart Screen](screenshots/cart.png)
+![Profile Screen](screenshots/profile.png)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK: Make sure you have Flutter installed on your machine. If not, follow the [official installation guide](https://flutter.dev/docs/get-started/install).
+- Dart: Flutter uses Dart as its programming language. Ensure you have Dart installed alongside Flutter.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# shopping_flutter
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/AaronPeterOcen/shopping_flutter.git

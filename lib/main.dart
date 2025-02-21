@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Shoppy App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.purple,
+          seedColor: const Color.fromARGB(255, 54, 210, 213),
           brightness: Brightness.light,
         ),
         textTheme: GoogleFonts.ubuntuTextTheme(textTheme).copyWith(
