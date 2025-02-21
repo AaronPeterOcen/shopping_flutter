@@ -31,3 +31,16 @@ A simple and elegant shopping app built with Flutter. This app demonstrates the 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/AaronPeterOcen/shopping_flutter.git
+
+2. **Navigate to the project directory**:
+    ```bash
+    cd shopping_flutter
+
+
+3. **Install dependencies**:
+    ```bash
+    flutter pub get
+
+4. ***Run the app***:
+    ```bash
+    flutter run
