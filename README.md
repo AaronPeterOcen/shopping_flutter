@@ -44,3 +44,45 @@ A simple and elegant shopping app built with Flutter. This app demonstrates the 
 4. ***Run the app***:
     ```bash
     flutter run
+
+### Running Tests
+- To run unit tests and widget tests, use the following command:
+
+    ```bash
+    flutter test
+
+- For integration tests:
+    ```bash
+    flutter drive --target=test_driver/app.dart
+
+## Dependencies
+
+This project uses the following key dependencies:
+
+- **Provider**: For state management.
+- **http**: For making API requests (if applicable).
+- **fluttertoast**: For displaying toast messages.
+- **cached_network_image**: For efficient image loading.
+
+To see the full list of dependencies, check the `pubspec.yaml` file.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeatureName`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeatureName`).
+5. Open a pull request.
+
+Please ensure your code follows the project's coding standards and includes appropriate tests.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Flutter Documentation](https://flutter.dev/docs) for providing excellent resources.
+- [Unsplash](https://unsplash.com/) for free images used in the app.
